@@ -4,7 +4,7 @@
     @apply hover:scale-110 transition duration-100;
 
     .button-text {
-        @apply text-white font-sans;
+        @apply text-white font-sans underline;
     }
 }
 

@@ -1,3 +1,8 @@
 .navbar {
     @apply h-14 bg-primary;
+    @apply flex items-center p-2 flex-row justify-between;
+
+    .logo {
+        @apply w-[170px];
+    }
 }
