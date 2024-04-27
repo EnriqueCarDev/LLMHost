@@ -2,7 +2,12 @@
   <div class="logo">
     <img src="../../../../assets/images/logo.png" />
   </div>
-  @if (isMobile) {
-  <button class="menu-button"></button>
-  }
+  @if (!isMobile) {
+  <div class="nav-element-container">
+    <app-nav-element [label]="'Developers'"></app-nav-element>
+    <app-nav-element [label]="'Technology'"></app-nav-element>
+    <app-nav-element [label]="'Business'"></app-nav-element>
+    <app-nav-element [label]="'About Us'"></app-nav-element>
+  </div>
+  } @else { }
 </nav>

@@ -1,8 +1,12 @@
 .navbar {
     @apply h-14 bg-primary;
-    @apply flex items-center p-2 flex-row justify-between;
+    @apply flex items-center px-2 flex-row justify-between;
 
     .logo {
         @apply w-[170px];
+    }
+
+    .nav-element-container {
+        @apply flex flex-row space-x-6 h-full mr-[100px];
     }
 }

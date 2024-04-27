@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { NavElementComponent } from '../nav-element/nav-element.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [NavElementComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
