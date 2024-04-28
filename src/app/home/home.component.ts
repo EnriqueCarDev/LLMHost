@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { HeroInfoComponent } from './sections/hero-info/hero-info.component';
 import { HeroComponent } from './sections/hero/hero.component';
 
 @Component({
@@ -12,6 +13,7 @@ import { HeroComponent } from './sections/hero/hero.component';
     RouterLink,
     RouterLinkActive,
     HeroComponent,
+    HeroInfoComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

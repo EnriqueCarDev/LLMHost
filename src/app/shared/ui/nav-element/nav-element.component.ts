@@ -9,5 +9,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class NavElementComponent {
   @Input() label: string = 'label';
+  // @Input() routerLink?: string;
   @Output() navElementClick = new EventEmitter<void>();
 }
