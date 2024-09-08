@@ -1,0 +1,15 @@
+.chat-history {
+    @apply h-full w-[240px] bg-[#f5f5f4] border-r;
+}
+.chat-zone {
+    @apply w-full flex flex-col h-screen p-12 justify-end;
+
+    .chat-input {
+        @apply w-full border rounded-xl h-14;
+        @apply flex flex-row items-center p-2 justify-end;
+    }
+
+    .send-button {
+        @apply h-full w-10 my-2 bg-primary opacity-80 rounded-lg;
+    }
+}
