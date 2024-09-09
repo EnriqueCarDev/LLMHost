@@ -1,6 +1,11 @@
-<div class="h-full w-full flex flex-row">
-  <div class="chat-history">chat</div>
+<div class="ai-page">
+  <app-drawer
+    [conversations]="chatHistory"
+    [isDrawerOpen]="isDrawerOpen"
+  ></app-drawer>
+
   <div class="chat-zone">
+    <button class="button" (click)="toggleDrawer()">drawer</button>
     <div class="chat-input">
       <button class="send-button"></button>
     </div>

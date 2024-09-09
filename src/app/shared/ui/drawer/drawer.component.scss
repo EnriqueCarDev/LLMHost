@@ -1,0 +1,18 @@
+:host {
+    .drawer {
+        @apply h-full bg-[#f5f5f4] border-r;
+        @apply flex flex-col items-center;
+        @apply pt-2;
+        @apply overflow-hidden;
+    }
+
+    .conversation-history {
+        @apply flex flex-col gap-y-2;
+        @apply p-2;
+        @apply text-start;
+    }
+
+    .nav-menu {
+        @apply flex flex-col gap-y-2;
+    }
+}

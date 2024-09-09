@@ -1,0 +1,15 @@
+<div
+  [ngClass]="{
+    'w-0 hidden': !isDrawerOpen(),
+    'w-64 block': isDrawerOpen(),
+    'transition-all duration-300 ease-in-out': true
+  }"
+  class="drawer"
+>
+  <div class="nav-menu"></div>
+  <ul class="conversation-history">
+    @for (conversation of conversations(); track $index) {
+    <li>{{ conversation }}</li>
+    }
+  </ul>
+</div>
