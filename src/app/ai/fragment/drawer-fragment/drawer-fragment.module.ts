@@ -16,7 +16,6 @@ import { DrawerFragmentComponent } from './drawer-fragment.component';
       drawerFragmentFeatureKey,
       drawerFragmentFeature.reducer
     ),
-    EffectsModule.forFeature([OrganizationSuggestionsFragmentEffects]),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
