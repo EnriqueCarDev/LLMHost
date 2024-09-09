@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { chatHistoryMock } from '../mocks/chat-history.mock';
+import { ChatMetaData } from '../models/chatMetaData';
 import { DrawerComponent } from '../shared/ui/drawer/drawer.component';
 
 @Component({
@@ -17,12 +19,9 @@ import { DrawerComponent } from '../shared/ui/drawer/drawer.component';
   styleUrl: './ai.component.scss',
 })
 export class AiComponent implements OnInit {
-  chatHistory: string[] = [
-    'User: Hi there!',
-    'AI: Hello! How can I help you today?',
-    'User: What is the weather like?',
-    'AI: It looks sunny today in your location.',
-  ];
+  chatHistory: ChatMetaData[] = chatHistoryMock;
+
+  menuItems: string[] = ['Home', 'The solution'];
 
   isDrawerOpen: boolean = true;
 

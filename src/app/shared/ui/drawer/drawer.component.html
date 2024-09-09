@@ -2,14 +2,28 @@
   [ngClass]="{
     'w-0 hidden': !isDrawerOpen(),
     'w-64 block': isDrawerOpen(),
-    'transition-all duration-300 ease-in-out': true
   }"
   class="drawer"
 >
-  <div class="nav-menu"></div>
-  <ul class="conversation-history">
-    @for (conversation of conversations(); track $index) {
-    <li>{{ conversation }}</li>
+  <div class="w-full flex justify-end md:hidden">
+    <button class="drawer-button" (click)="onToggleDrawer()">drawer</button>
+  </div>
+
+  <div class="nav-menu">
+    <ul>
+      @for (item of menuItems(); track $index) {
+      <li>{{ item }}</li>
+      }
+    </ul>
+  </div>
+  <ul
+    class="conversation-history"
+    [ngClass]="{
+      'opacity-0': !isDrawerOpen(),
+    }"
+  >
+    @for (conversation of conversations(); track conversation.id) {
+    <li class="conversation-element">{{ conversation.title }}</li>
     }
   </ul>
 </div>

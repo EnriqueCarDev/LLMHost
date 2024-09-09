@@ -1,11 +1,16 @@
-<div class="ai-page">
+<div class="ai-page relative">
   <app-drawer
     [conversations]="chatHistory"
+    [menuItems]="menuItems"
     [isDrawerOpen]="isDrawerOpen"
+    (toggleDrawerEvent)="toggleDrawer()"
   ></app-drawer>
 
   <div class="chat-zone">
-    <button class="button" (click)="toggleDrawer()">drawer</button>
+    @if (isDrawerOpen) {
+    <div [ngClass]="{ overlay: isDrawerOpen }"></div>
+    }
+    <button class="drawer-button" (click)="toggleDrawer()">drawer</button>
     <div class="chat-input">
       <button class="send-button"></button>
     </div>
