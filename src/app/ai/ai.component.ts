@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { chatHistoryMock } from '../mocks/chat-history.mock';
 import { ChatMetaData } from '../models/chatMetaData';
-import { DrawerComponent } from '../shared/ui/drawer/drawer.component';
+import { DrawerComponent } from './ui/drawer/drawer.component';
 
 @Component({
   selector: 'app-ai',
