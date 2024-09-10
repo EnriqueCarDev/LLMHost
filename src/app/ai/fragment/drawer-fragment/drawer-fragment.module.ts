@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { DrawerFragmentEffects } from './data/state/drawer-fragment.effects';
 import {
   drawerFragmentFeature,
   drawerFragmentFeatureKey,
@@ -16,8 +18,7 @@ import { DrawerFragmentComponent } from './drawer-fragment.component';
       drawerFragmentFeatureKey,
       drawerFragmentFeature.reducer
     ),
-    // TO DO
-    // EffectsModule
+    EffectsModule.forFeature([DrawerFragmentEffects]),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
