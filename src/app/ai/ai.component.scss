@@ -13,18 +13,6 @@
         @apply w-full flex flex-col h-screen justify-end relative;
         @apply p-4 md:p-12;
 
-        .chat-input {
-            @apply w-full min-w-96 border rounded-xl h-14;
-            @apply flex flex-row items-center p-2 justify-end;
-        }
-
-        .send-button {
-            @apply h-full w-10;
-            @apply my-2;
-            @apply bg-primary opacity-80;
-            @apply rounded-lg;
-        }
-
         .overlay {
             @apply fixed inset-0;
             @apply bg-black opacity-50 z-0 md:hidden md:opacity-0;

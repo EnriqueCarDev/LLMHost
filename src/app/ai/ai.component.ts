@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { chatHistoryMock } from '../mocks/chat-history.mock';
 import { ChatMetaData } from '../models/chatMetaData';
+import { ChatInputComponent } from '../shared/ui/chat-input/chat-input.component';
 import { DrawerComponent } from './ui/drawer/drawer.component';
 
 @Component({
@@ -14,6 +15,7 @@ import { DrawerComponent } from './ui/drawer/drawer.component';
     RouterLink,
     RouterLinkActive,
     DrawerComponent,
+    ChatInputComponent,
   ],
   templateUrl: './ai.component.html',
   styleUrl: './ai.component.scss',
@@ -21,7 +23,7 @@ import { DrawerComponent } from './ui/drawer/drawer.component';
 export class AiComponent implements OnInit {
   chatHistory: ChatMetaData[] = chatHistoryMock;
 
-  menuItems: string[] = ['Home', 'The solution'];
+  menuItems: string[] = ['New Chat', 'The solution'];
 
   isDrawerOpen: boolean = true;
 

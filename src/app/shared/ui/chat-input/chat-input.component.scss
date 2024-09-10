@@ -1,0 +1,19 @@
+:host {
+    .chat-input {
+        @apply w-full min-w-96  h-auto;
+        @apply border rounded-xl;
+        @apply flex flex-row items-center p-2 justify-end gap-x-2;
+    }
+
+    .send-button {
+        @apply h-10 w-10;
+        @apply bg-primary opacity-80;
+        @apply rounded-lg;
+    }
+
+    .input-section {
+        @apply w-full h-full;
+        @apply border-0 outline-none;
+        @apply text-base overflow-scroll;
+    }
+}

@@ -21,7 +21,7 @@
   <div class="nav-menu">
     <ul>
       @for (item of menuItems(); track $index) {
-      <li>{{ item }}</li>
+      <li class="nav-element">{{ item }}</li>
       }
     </ul>
   </div>
@@ -32,7 +32,7 @@
     }"
   >
     @for (conversation of conversations(); track conversation.id) {
-    <app-chat-history-element [chatLabel]="conversation.title" />
+    <app-chat-history-element class="" [chatLabel]="conversation.title" />
     }
   </ul>
 </div>
