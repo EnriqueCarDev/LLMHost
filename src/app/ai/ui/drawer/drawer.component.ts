@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, input, output } from '@angular/core';
 import { ChatMetaData } from 'src/app/models/chatMetaData';
+import { ChatHistoryElementComponent } from '../chat-history-element/chat-history-element.component';
 
 @Component({
   selector: 'app-drawer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ChatHistoryElementComponent],
   templateUrl: './drawer.component.html',
   styleUrl: './drawer.component.scss',
 })
@@ -18,6 +19,5 @@ export class DrawerComponent {
 
   onToggleDrawer() {
     this.toggleDrawerEvent.emit();
-    // sessionStorage.setItem('drawerOpen', this.isDrawerOpen.toString());
   }
 }

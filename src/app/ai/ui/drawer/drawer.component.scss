@@ -9,16 +9,12 @@
     }
 
     .conversation-history {
-        @apply flex flex-col gap-y-2;
+        @apply flex flex-col gap-y-1;
         @apply p-2;
         @apply text-start;
         @apply duration-100 ease-in-out;
         @apply text-sm;
         @apply overflow-y-auto;
-
-        .conversation-element {
-            @apply p-2;
-        }
     }
 
     .nav-menu {
@@ -27,8 +23,8 @@
 
     .drawer-button {
         @apply flex m-2;
-        @apply p-1 border rounded-lg;
+        @apply p-1;
         @apply w-fit;
-        @apply hover:bg-gray-600 hover:text-white duration-100 cursor-pointer;
+        @apply duration-100 cursor-pointer;
     }
 }

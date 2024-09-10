@@ -10,7 +10,16 @@
     @if (isDrawerOpen) {
     <div [ngClass]="{ overlay: isDrawerOpen }"></div>
     }
-    <button class="drawer-button" (click)="toggleDrawer()">drawer</button>
+    <button class="drawer-button" (click)="toggleDrawer()">
+      <img
+        [src]="
+          isDrawerOpen
+            ? '../../assets/icons/chevron_left.svg'
+            : '../../assets/icons/chevron_right.svg'
+        "
+        alt="iconDrawer"
+      />
+    </button>
     <div class="chat-input">
       <button class="send-button"></button>
     </div>

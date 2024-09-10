@@ -6,7 +6,16 @@
   class="drawer"
 >
   <div class="w-full flex justify-end md:hidden">
-    <button class="drawer-button" (click)="onToggleDrawer()">drawer</button>
+    <button class="drawer-button" (click)="onToggleDrawer()">
+      <img
+        [src]="
+          isDrawerOpen()
+            ? '../../../assets/icons/chevron_left.svg'
+            : '../../../assets/icons/chevron_right.svg'
+        "
+        alt="iconDrawer"
+      />
+    </button>
   </div>
 
   <div class="nav-menu">
@@ -23,7 +32,7 @@
     }"
   >
     @for (conversation of conversations(); track conversation.id) {
-    <li class="conversation-element">{{ conversation.title }}</li>
+    <app-chat-history-element [chatLabel]="conversation.title" />
     }
   </ul>
 </div>

@@ -16,6 +16,8 @@ import { DrawerFragmentComponent } from './drawer-fragment.component';
       drawerFragmentFeatureKey,
       drawerFragmentFeature.reducer
     ),
+    // TO DO
+    // EffectsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
