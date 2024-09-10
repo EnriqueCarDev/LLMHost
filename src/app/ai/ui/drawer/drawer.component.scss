@@ -3,13 +3,13 @@
         @apply h-full bg-[#f5f5f4] border-r;
         @apply absolute left-0 top-0 h-full z-10 md:static;
         @apply flex flex-col gap-y-4;
-        @apply pt-2 ;
+        @apply pt-2;
         @apply overflow-hidden;
         @apply transition-all duration-100 ease-in-out;
     }
 
     .conversation-history {
-        @apply flex flex-col;
+        @apply flex flex-col mx-2;
         @apply text-start;
         @apply duration-100 ease-in-out;
         @apply text-sm;

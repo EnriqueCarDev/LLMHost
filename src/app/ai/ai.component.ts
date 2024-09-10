@@ -4,6 +4,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { chatHistoryMock } from '../mocks/chat-history.mock';
 import { ChatMetaData } from '../models/chatMetaData';
 import { ChatInputComponent } from '../shared/ui/chat-input/chat-input.component';
+import { DrawerFragmentModule } from './fragment/drawer-fragment/drawer-fragment.module';
 import { DrawerComponent } from './ui/drawer/drawer.component';
 
 @Component({
@@ -15,6 +16,7 @@ import { DrawerComponent } from './ui/drawer/drawer.component';
     RouterLink,
     RouterLinkActive,
     DrawerComponent,
+    DrawerFragmentModule,
     ChatInputComponent,
   ],
   templateUrl: './ai.component.html',
