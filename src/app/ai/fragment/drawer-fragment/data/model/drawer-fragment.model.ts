@@ -27,4 +27,8 @@ export class DrawerFragmentStateModel {
   get chatHistory(): ChatMetaData[] {
     return this._chatHistory;
   }
+
+  static init(): DrawerFragmentStateModel {
+    return new DrawerFragmentStateModel(StateStatusModel.ofPending(), []);
+  }
 }
