@@ -31,4 +31,12 @@ export class DrawerFragmentStateModel {
   static init(): DrawerFragmentStateModel {
     return new DrawerFragmentStateModel(StateStatusModel.ofPending(), []);
   }
+
+  fail(error: string): DrawerFragmentStateModel {
+    return new DrawerFragmentStateModel(
+      StateStatusModel.ofFailure(),
+      this._chatHistory,
+      error
+    );
+  }
 }
