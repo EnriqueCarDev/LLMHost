@@ -39,4 +39,18 @@ export class DrawerFragmentStateModel {
       error
     );
   }
+
+  static ofSuccess(chatHistory: ChatMetaData[]): DrawerFragmentStateModel {
+    return new DrawerFragmentStateModel(
+      StateStatusModel.ofSuccess(),
+      chatHistory
+    );
+  }
+
+  load(): DrawerFragmentStateModel {
+    return new DrawerFragmentStateModel(
+      StateStatusModel.ofLoading(),
+      this._chatHistory
+    );
+  }
 }

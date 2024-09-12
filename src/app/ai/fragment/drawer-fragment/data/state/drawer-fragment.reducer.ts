@@ -1,25 +1,22 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
+import { DrawerFragmentStateModel } from '../model/drawer-fragment.model';
 import { DrawerFragmentActions } from './drawer-fragment.actions';
 
 export const drawerFragmentFeatureKey = 'drawerFragment';
 
-export interface State {
-
-}
-
-export const initialState: State = {
-
-};
+export const initialDrawerFragmentState: DrawerFragmentStateModel =
+  DrawerFragmentStateModel.init();
 
 export const reducer = createReducer(
-  initialState,
-  on(DrawerFragmentActions.loadDrawerFragments, state => state),
-  on(DrawerFragmentActions.loadDrawerFragmentsSuccess, (state, action) => state),
-  on(DrawerFragmentActions.loadDrawerFragmentsFailure, (state, action) => state),
+  initialDrawerFragmentState,
+  on(DrawerFragmentActions.loadDrawerFragments, (state) => state.load()),
+  on(DrawerFragmentActions.loadDrawerFragmentsSuccess, (_, action) =>
+    DrawerFragmentStateModel.ofSuccess(action.data)
+  ),
+  on(DrawerFragmentActions.loadDrawerFragmentsFailure, (state, action) => state)
 );
 
 export const drawerFragmentFeature = createFeature({
   name: drawerFragmentFeatureKey,
   reducer,
 });
-
