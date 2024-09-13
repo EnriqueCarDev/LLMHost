@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { chatHistoryMock } from '../mocks/chat-history.mock';
-import { ChatMetaData } from '../models/chatMetaData';
+import { Store } from '@ngrx/store';
 import { ChatInputComponent } from '../shared/ui/chat-input/chat-input.component';
+import { DrawerFragmentActions } from './fragment/drawer-fragment/data/state/drawer-fragment.actions';
+import { drawerFragmentFeature } from './fragment/drawer-fragment/data/state/drawer-fragment.reducer';
 import { DrawerFragmentModule } from './fragment/drawer-fragment/drawer-fragment.module';
 import { DrawerComponent } from './ui/drawer/drawer.component';
 
@@ -18,26 +19,34 @@ import { DrawerComponent } from './ui/drawer/drawer.component';
     DrawerComponent,
     DrawerFragmentModule,
     ChatInputComponent,
+    DrawerFragmentModule,
   ],
   templateUrl: './ai.component.html',
   styleUrl: './ai.component.scss',
 })
 export class AiComponent implements OnInit {
-  chatHistory: ChatMetaData[] = chatHistoryMock;
-
-  menuItems: string[] = ['New Chat', 'The solution'];
-
-  isDrawerOpen: boolean = true;
+  private readonly store: Store = inject(Store);
+  readonly drawerFragmentState = this.store.selectSignal(
+    drawerFragmentFeature.selectDrawerFragmentState
+  );
 
   ngOnInit(): void {
-    const drawerState = sessionStorage.getItem('drawerOpen');
-    if (drawerState) {
-      this.isDrawerOpen = drawerState === 'true';
-    }
+    this.store.dispatch(DrawerFragmentActions.loadDrawerFragments());
   }
 
-  toggleDrawer() {
-    this.isDrawerOpen = !this.isDrawerOpen;
-    sessionStorage.setItem('drawerOpen', this.isDrawerOpen.toString());
+  onToggleDrawer(): void {
+    this.store.dispatch(DrawerFragmentActions.toggleDrawer());
   }
+
+  // ngOnInit(): void {
+  //   const drawerState = sessionStorage.getItem('drawerOpen');
+  //   if (drawerState) {
+  //     this.isDrawerOpen = drawerState === 'true';
+  //   }
+  // }
+
+  // toggleDrawer() {
+  //   this.isDrawerOpen = !this.isDrawerOpen;
+  //   sessionStorage.setItem('drawerOpen', this.isDrawerOpen.toString());
+  // }
 }

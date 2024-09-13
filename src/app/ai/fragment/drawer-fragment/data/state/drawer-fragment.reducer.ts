@@ -13,7 +13,10 @@ export const reducer = createReducer(
   on(DrawerFragmentActions.loadDrawerFragmentsSuccess, (_, action) =>
     DrawerFragmentStateModel.ofSuccess(action.data)
   ),
-  on(DrawerFragmentActions.loadDrawerFragmentsFailure, (state, action) => state)
+  on(DrawerFragmentActions.loadDrawerFragmentsFailure, (state, action) =>
+    state.fail(action.error)
+  ),
+  on(DrawerFragmentActions.toggleDrawer, (state) => state.toggleDrawer())
 );
 
 export const drawerFragmentFeature = createFeature({

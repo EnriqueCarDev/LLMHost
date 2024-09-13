@@ -11,7 +11,7 @@ import { ChatHistoryElementComponent } from '../chat-history-element/chat-histor
   styleUrl: './drawer.component.scss',
 })
 export class DrawerComponent {
-  conversations = input<ChatMetaData[]>([]);
+  chatHistory = input<ChatMetaData[]>([]);
   isDrawerOpen = input<boolean>(true);
   menuItems = input<string[]>([]);
 

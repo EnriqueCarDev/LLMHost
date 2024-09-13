@@ -5,14 +5,17 @@ export class DrawerFragmentStateModel {
   private readonly _status: StateStatusModel;
   private readonly _error?: string;
   private readonly _chatHistory: ChatMetaData[] = [];
+  private readonly _isDrawerOpen: boolean;
 
   constructor(
     status: StateStatusModel,
     chatHistory: ChatMetaData[],
+    isDrawerOpen: boolean,
     error?: string
   ) {
     this._status = status;
     this._chatHistory = chatHistory;
+    this._isDrawerOpen = isDrawerOpen;
     this._error = error;
   }
 
@@ -28,14 +31,25 @@ export class DrawerFragmentStateModel {
     return this._chatHistory;
   }
 
+  get isDrawerOpen(): boolean {
+    return this._isDrawerOpen;
+  }
+
   static init(): DrawerFragmentStateModel {
-    return new DrawerFragmentStateModel(StateStatusModel.ofPending(), []);
+    const drawerState = sessionStorage.getItem('drawerOpen');
+    const isDrawerOpen = drawerState !== null ? drawerState === 'true' : false;
+    return new DrawerFragmentStateModel(
+      StateStatusModel.ofPending(),
+      [],
+      isDrawerOpen
+    );
   }
 
   fail(error: string): DrawerFragmentStateModel {
     return new DrawerFragmentStateModel(
       StateStatusModel.ofFailure(),
       this._chatHistory,
+      this._isDrawerOpen,
       error
     );
   }
@@ -43,14 +57,26 @@ export class DrawerFragmentStateModel {
   static ofSuccess(chatHistory: ChatMetaData[]): DrawerFragmentStateModel {
     return new DrawerFragmentStateModel(
       StateStatusModel.ofSuccess(),
-      chatHistory
+      chatHistory,
+      true
     );
   }
 
   load(): DrawerFragmentStateModel {
     return new DrawerFragmentStateModel(
       StateStatusModel.ofLoading(),
-      this._chatHistory
+      this._chatHistory,
+      this._isDrawerOpen
+    );
+  }
+
+  toggleDrawer(): DrawerFragmentStateModel {
+    const newDrawerState = !this._isDrawerOpen;
+    sessionStorage.setItem('drawerOpen', newDrawerState.toString());
+    return new DrawerFragmentStateModel(
+      this._status,
+      this._chatHistory,
+      newDrawerState
     );
   }
 }

@@ -31,7 +31,7 @@
       'opacity-0': !isDrawerOpen(),
     }"
   >
-    @for (conversation of conversations(); track conversation.id) {
+    @for (conversation of chatHistory(); track conversation.id) {
     <app-chat-history-element class="" [chatLabel]="conversation.title" />
     }
   </ul>

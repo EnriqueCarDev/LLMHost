@@ -1,1 +1,6 @@
-<app-drawer />
+<app-drawer
+  [chatHistory]="drawerFragmentState().chatHistory"
+  [isDrawerOpen]="drawerFragmentState().isDrawerOpen"
+  [menuItems]="menuItems"
+  (toggleDrawerEvent)="onToggleDrawer()"
+/>

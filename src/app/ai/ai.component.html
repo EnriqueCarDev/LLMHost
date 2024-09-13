@@ -1,19 +1,14 @@
 <div class="ai-page relative">
-  <app-drawer
-    [conversations]="chatHistory"
-    [menuItems]="menuItems"
-    [isDrawerOpen]="isDrawerOpen"
-    (toggleDrawerEvent)="toggleDrawer()"
-  ></app-drawer>
+  <app-drawer-fragment />
 
   <div class="chat-zone">
-    @if (isDrawerOpen) {
-    <div [ngClass]="{ overlay: isDrawerOpen }"></div>
+    @if (drawerFragmentState().isDrawerOpen) {
+    <div [ngClass]="{ overlay: drawerFragmentState().isDrawerOpen }"></div>
     }
-    <button class="drawer-button" (click)="toggleDrawer()">
+    <button class="drawer-button" (click)="onToggleDrawer()">
       <img
         [src]="
-          isDrawerOpen
+          drawerFragmentState().isDrawerOpen
             ? '../../assets/icons/chevron_left.svg'
             : '../../assets/icons/chevron_right.svg'
         "

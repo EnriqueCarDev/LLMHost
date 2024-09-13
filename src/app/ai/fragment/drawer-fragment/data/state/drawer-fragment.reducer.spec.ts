@@ -41,4 +41,19 @@ describe('DrawerFragment Reducer', () => {
     // Then
     expect(actual).toEqual(expected);
   });
+
+  it('should loadDrawerFragmentsSuccess return a state in success mode', () => {
+    // Given
+    const error: string = 'an error';
+    const expected = DrawerFragmentStateModel.init().fail(error);
+    const action = DrawerFragmentActions.loadDrawerFragmentsFailure({
+      error: error,
+    });
+
+    // When
+    const actual = reducer(initialDrawerFragmentState, action);
+
+    // Then
+    expect(actual).toEqual(expected);
+  });
 });
