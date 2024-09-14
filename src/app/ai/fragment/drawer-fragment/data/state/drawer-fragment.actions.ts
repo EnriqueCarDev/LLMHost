@@ -7,6 +7,7 @@ export const DrawerFragmentActions = createActionGroup({
     'Load DrawerFragments': emptyProps(),
     'Load DrawerFragments Success': props<{ data: ChatMetaData[] }>(),
     'Load DrawerFragments Failure': props<{ error: string }>(),
+    'Set Drawer State': props<{ isDrawerOpen: boolean }>(),
     'toggle Drawer': emptyProps(),
   },
 });

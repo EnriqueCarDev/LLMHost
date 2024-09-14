@@ -20,11 +20,13 @@ export class DrawerFragmentComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(DrawerFragmentActions.loadDrawerFragments());
 
-    // const drawerState = sessionStorage.getItem('drawerOpen');
-    // if (drawerState !== null) {
-    //   const isDrawerOpen = drawerState === 'true';
-    //   this.store.dispatch(DrawerFragmentActions.setDrawerState({ isDrawerOpen }));
-    // }
+    const drawerState = sessionStorage.getItem('drawerOpen');
+    if (drawerState !== null) {
+      const isDrawerOpen = drawerState === 'true';
+      this.store.dispatch(
+        DrawerFragmentActions.setDrawerState({ isDrawerOpen })
+      );
+    }
   }
 
   onToggleDrawer(): void {

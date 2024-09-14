@@ -56,4 +56,34 @@ describe('DrawerFragment Reducer', () => {
     // Then
     expect(actual).toEqual(expected);
   });
+
+  it('should toggleDrawer set the drawerState to false', () => {
+    // Given
+    const initialState = new DrawerFragmentStateModel(
+      initialDrawerFragmentState.status,
+      initialDrawerFragmentState.chatHistory,
+      true
+    );
+    const action = DrawerFragmentActions.toggleDrawer();
+    // When
+    const result = reducer(initialState, action);
+
+    // Then
+    expect(result.isDrawerOpen).toBe(false);
+  });
+
+  it('should toggleDrawer set the drawerState to true', () => {
+    // Given
+    const initialState = new DrawerFragmentStateModel(
+      initialDrawerFragmentState.status,
+      initialDrawerFragmentState.chatHistory,
+      false
+    );
+    const action = DrawerFragmentActions.toggleDrawer();
+    // When
+    const result = reducer(initialState, action);
+
+    // Then
+    expect(result.isDrawerOpen).toBe(true);
+  });
 });

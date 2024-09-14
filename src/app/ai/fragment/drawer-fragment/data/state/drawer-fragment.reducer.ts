@@ -16,7 +16,16 @@ export const reducer = createReducer(
   on(DrawerFragmentActions.loadDrawerFragmentsFailure, (state, action) =>
     state.fail(action.error)
   ),
-  on(DrawerFragmentActions.toggleDrawer, (state) => state.toggleDrawer())
+  on(DrawerFragmentActions.toggleDrawer, (state) => state.toggleDrawer()),
+  on(
+    DrawerFragmentActions.setDrawerState,
+    (state, { isDrawerOpen }) =>
+      new DrawerFragmentStateModel(
+        state.status,
+        state.chatHistory,
+        isDrawerOpen
+      )
+  )
 );
 
 export const drawerFragmentFeature = createFeature({
