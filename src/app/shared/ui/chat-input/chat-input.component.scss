@@ -1,8 +1,8 @@
 :host {
     .chat-input {
-        @apply w-full min-w-96  h-auto;
+        @apply w-full min-w-96 h-auto;
         @apply border rounded-xl;
-        @apply flex flex-row items-center p-2 justify-end gap-x-2;
+        @apply flex flex-row items-center p-2 gap-x-2;
     }
 
     .send-button {
