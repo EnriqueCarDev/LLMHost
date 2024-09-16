@@ -1,0 +1,33 @@
+:host {
+    .drawer {
+        @apply h-full bg-secondary border-r;
+        @apply absolute left-0 top-0 h-full z-10 md:static;
+        @apply flex flex-col gap-y-4;
+        @apply pt-2;
+        @apply overflow-hidden;
+        @apply transition-all duration-100 ease-in-out;
+    }
+
+    .conversation-history {
+        @apply flex flex-col mx-2;
+        @apply text-start;
+        @apply duration-100 ease-in-out;
+        @apply text-sm;
+        @apply overflow-y-auto;
+    }
+
+    .nav-menu {
+        @apply flex flex-col;
+    }
+
+    .nav-element {
+        @apply p-2;
+    }
+
+    .drawer-button {
+        @apply flex m-2;
+        @apply p-1;
+        @apply w-fit;
+        @apply duration-100 cursor-pointer;
+    }
+}

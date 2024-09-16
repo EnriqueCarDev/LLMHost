@@ -1,0 +1,33 @@
+.hero-container {
+    @apply flex flex-col h-[400px] md:h-[600px] space-y-6;
+    @apply md:justify-center;
+    @apply px-6 py-12 md:px-20;
+    @apply bg-[url('../../../../assets/images/hero_picture.jpg')] bg-cover bg-right-bottom;
+}
+
+.color-overlay {
+    @apply h-full absolute bg-primary w-full top-0 left-0 opacity-50 z-0;
+}
+
+.hero-picture {
+    @apply absolute;
+}
+
+.hero-title {
+    @apply font-mono text-white text-3xl font-extrabold;
+    @apply md:text-7xl;
+}
+
+.hero-description {
+    @apply font-mono text-base md:text-lg text-white;
+}
+
+.text-container {
+    @apply flex flex-col space-y-6 z-10;
+}
+
+.button-container {
+    @apply flex flex-col space-y-2 items-center justify-center z-10;
+    @apply md:flex-row md:space-x-10 md:space-y-0 md:justify-start;
+}
+

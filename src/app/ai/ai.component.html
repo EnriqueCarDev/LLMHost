@@ -1,0 +1,21 @@
+<div class="ai-page">
+  <app-drawer-fragment />
+
+  <div class="chat-zone">
+    @if (drawerFragmentState().isDrawerOpen) {
+    <div [ngClass]="{ overlay: drawerFragmentState().isDrawerOpen }"></div>
+    }
+    <button class="drawer-button" (click)="onToggleDrawer()">
+      <img
+        [src]="
+          drawerFragmentState().isDrawerOpen
+            ? '../../assets/icons/chevron_left.svg'
+            : '../../assets/icons/chevron_right.svg'
+        "
+        alt="iconDrawer"
+      />
+    </button>
+    <app-model-answer />
+    <app-chat-input />
+  </div>
+</div>

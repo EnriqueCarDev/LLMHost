@@ -1,0 +1,10 @@
+.button-component {
+    @apply bg-primary w-full md:max-w-[250px] p-3 rounded-lg;
+    @apply flex items-center justify-center ;
+    @apply hover:scale-110 transition duration-100;
+
+    .button-text {
+        @apply text-white font-sans underline;
+    }
+}
+

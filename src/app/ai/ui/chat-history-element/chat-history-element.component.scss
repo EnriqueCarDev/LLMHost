@@ -1,0 +1,9 @@
+:host {
+    .chat-element {
+        @apply items-center flex p-2;
+        @apply rounded-lg;
+        @apply hover:bg-on-secondary;
+        @apply hover:cursor-pointer;
+        @apply overflow-hidden font-sans;
+    }
+}

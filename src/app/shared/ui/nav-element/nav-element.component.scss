@@ -1,0 +1,6 @@
+.nav-element {
+    @apply flex items-center justify-center h-full px-4;
+    @apply hover:bg-white transition-colors duration-100;
+    @apply text-white  text-lg font-thin hover:text-primary;
+}
+

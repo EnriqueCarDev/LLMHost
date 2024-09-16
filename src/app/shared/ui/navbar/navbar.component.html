@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <div class="logo">
+    <img src="../../../../assets/images/logo.png" alt="logo" />
+  </div>
+  @if (!isMobile) {
+  <div class="nav-element-container">
+    @for (menuItem of menuItems; track $index) {
+    <app-nav-element
+      [label]="menuItem.label"
+      [routerLink]="menuItem.url"
+    ></app-nav-element
+    >}
+  </div>
+  } @else { }
+</nav>

@@ -1,0 +1,38 @@
+<div
+  [ngClass]="{
+    'w-0 hidden': !isDrawerOpen(),
+    'w-64 block': isDrawerOpen(),
+  }"
+  class="drawer"
+>
+  <div class="w-full flex justify-end md:hidden">
+    <button class="drawer-button" (click)="onToggleDrawer()">
+      <img
+        [src]="
+          isDrawerOpen()
+            ? '../../../assets/icons/chevron_left.svg'
+            : '../../../assets/icons/chevron_right.svg'
+        "
+        alt="iconDrawer"
+      />
+    </button>
+  </div>
+
+  <div class="nav-menu">
+    <ul>
+      @for (item of menuItems(); track $index) {
+      <li class="nav-element">{{ item }}</li>
+      }
+    </ul>
+  </div>
+  <ul
+    class="conversation-history"
+    [ngClass]="{
+      'opacity-0': !isDrawerOpen(),
+    }"
+  >
+    @for (conversation of chatHistory(); track conversation.id) {
+    <app-chat-history-element class="" [chatLabel]="conversation.title" />
+    }
+  </ul>
+</div>

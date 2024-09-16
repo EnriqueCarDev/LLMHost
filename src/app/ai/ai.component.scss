@@ -1,0 +1,26 @@
+:host {
+    .ai-page {
+        @apply h-full w-full flex flex-row relative;
+    }
+    
+    .chat-zone {
+        @apply w-full flex flex-col h-screen justify-end relative;
+        @apply p-4 md:p-12;
+
+        .overlay {
+            @apply fixed inset-0;
+            @apply bg-black opacity-50 z-0 md:hidden md:opacity-0;
+            @apply transition-opacity duration-100;
+        }
+    }
+
+    .drawer-button {
+        @apply flex absolute top-0 left-0 m-2 p-1;
+        @apply duration-100 cursor-pointer;
+    }
+
+    .input-container {
+        @apply flex w-full justify-center;
+    }
+}
+
