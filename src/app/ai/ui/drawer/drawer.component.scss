@@ -1,6 +1,6 @@
 :host {
     .drawer {
-        @apply h-full bg-[#f5f5f4] border-r;
+        @apply h-full bg-secondary border-r;
         @apply absolute left-0 top-0 h-full z-10 md:static;
         @apply flex flex-col gap-y-4;
         @apply pt-2;

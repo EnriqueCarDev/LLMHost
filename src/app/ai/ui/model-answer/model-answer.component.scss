@@ -1,0 +1,7 @@
+:host {
+    .model-answer {
+        @apply flex flex-col h-full w-full bg-secondary;
+        @apply min-w-96 max-w-3xl mx-auto;
+        @apply overflow-hidden;
+    }
+}

@@ -1,12 +1,6 @@
 :host {
     .ai-page {
-        @apply h-full w-full flex flex-row;
-    }
-
-    .chat-history {
-        @apply h-full w-[240px];
-        @apply bg-[#f5f5f4];
-        @apply border-r;
+        @apply h-full w-full flex flex-row relative;
     }
     
     .chat-zone {
@@ -23,6 +17,10 @@
     .drawer-button {
         @apply flex absolute top-0 left-0 m-2 p-1;
         @apply duration-100 cursor-pointer;
+    }
+
+    .input-container {
+        @apply flex w-full justify-center;
     }
 }
 

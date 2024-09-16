@@ -7,6 +7,7 @@ import { DrawerFragmentActions } from './fragment/drawer-fragment/data/state/dra
 import { drawerFragmentFeature } from './fragment/drawer-fragment/data/state/drawer-fragment.reducer';
 import { DrawerFragmentModule } from './fragment/drawer-fragment/drawer-fragment.module';
 import { DrawerComponent } from './ui/drawer/drawer.component';
+import { ModelAnswerComponent } from './ui/model-answer/model-answer.component';
 
 @Component({
   selector: 'app-ai',
@@ -20,6 +21,7 @@ import { DrawerComponent } from './ui/drawer/drawer.component';
     DrawerFragmentModule,
     ChatInputComponent,
     DrawerFragmentModule,
+    ModelAnswerComponent,
   ],
   templateUrl: './ai.component.html',
   styleUrl: './ai.component.scss',
@@ -37,16 +39,4 @@ export class AiComponent implements OnInit {
   onToggleDrawer(): void {
     this.store.dispatch(DrawerFragmentActions.toggleDrawer());
   }
-
-  // ngOnInit(): void {
-  //   const drawerState = sessionStorage.getItem('drawerOpen');
-  //   if (drawerState) {
-  //     this.isDrawerOpen = drawerState === 'true';
-  //   }
-  // }
-
-  // toggleDrawer() {
-  //   this.isDrawerOpen = !this.isDrawerOpen;
-  //   sessionStorage.setItem('drawerOpen', this.isDrawerOpen.toString());
-  // }
 }
